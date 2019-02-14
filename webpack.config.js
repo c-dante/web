@@ -167,6 +167,7 @@ module.exports = ({
 		},
 		output: {
 			filename: production ? '[name].[contenthash].bundle.js' : '[name].bundle.js',
+			publicPath: './',
 			path: path.resolve(__dirname, 'dist'),
 		},
 		// Development settings
