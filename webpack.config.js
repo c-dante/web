@@ -100,7 +100,6 @@ const prodPlugins = [
 /**
  * entry points: src/index
  *
- * @param {
  * @returns {env => webpack config}
  */
 module.exports = ({
@@ -124,7 +123,7 @@ module.exports = ({
 		plugins,
 		optimization,
 		entry: {
-			index: './src/index.js',
+			index: './src/index.ts',
 		},
 		module: {
 			rules: [
@@ -152,18 +151,16 @@ module.exports = ({
 //						'sass-loader',
 //					],
 //				},
-				// js / babel
+				// typescript
 				{
-					test: /\.m?js$/,
-					exclude: /(node_modules)/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env'],
-						},
-					},
+					test: /\.tsx?$/,
+					use: 'ts-loader',
+					exclude: /node_modules/
 				},
 			],
+		},
+		resolve: {
+			extensions: [ '.tsx', '.ts', '.js' ]
 		},
 		output: {
 			filename: production ? '[name].[contenthash].bundle.js' : '[name].bundle.js',
