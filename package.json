@@ -22,7 +22,7 @@
     "**/*.css"
   ],
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
